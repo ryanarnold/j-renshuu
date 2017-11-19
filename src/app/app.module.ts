@@ -7,6 +7,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { StartComponent } from './components/start/start.component';
+import { CategoryButtonComponent } from './components/start/category-button/category-button.component';
 
 const appRoutes: Routes = [
   {
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    StartComponent
+    StartComponent,
+    CategoryButtonComponent
   ],
   imports: [
     BrowserModule,
