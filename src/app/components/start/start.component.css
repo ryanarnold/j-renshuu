@@ -5,9 +5,10 @@
 .start {
     width: 100%;
     margin-top: 60px;
+    margin-bottom:60px;
 }
 
 .all {
     width: 30%;
-    margin: 3px;
+    margin: 5px;
 }

@@ -12,7 +12,7 @@
 
       <div class="categories">      
         <button type="button" class="btn btn-primary all">みんな</button>
-        <category-button text="食品" title="food"></category-button>
+        <category-button [text]="c.descJapanese" [title]="c.descEnglish" *ngFor="let c of categories"></category-button>
       </div>
 
       <br>
