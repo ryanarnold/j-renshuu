@@ -2,13 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 
-import { AppComponent } from './app.component';
+// Components
 
-const appRoutes: Routes = []
+import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  }
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
