@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CategoryButtonComponent implements OnInit {
   @Input() private text: string;
+  @Input() private title: string;
   private toggled: boolean;
 
   toggleState() {
@@ -20,6 +21,5 @@ export class CategoryButtonComponent implements OnInit {
   }
 
   ngOnInit() {
-    
   }
 }
