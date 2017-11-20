@@ -9,10 +9,12 @@ import { Category } from '../models/category.model';
 export class QuizService
 {
   private format: string;
+  private categories: Array<Category>;
 
   constructor()
   {
     this.format = 'choice';
+    this.categories = new Array<Category>();
   }
 
   public getFormat(): String
@@ -23,5 +25,15 @@ export class QuizService
   public setFormat(format: string)
   {
     this.format = format;
+  }
+
+  public getCategories(): Array<Category>
+  {
+    return this.categories;
+  }
+
+  public addCategory(category: Category)
+  {
+    this.categories.push(category);
   }
 }

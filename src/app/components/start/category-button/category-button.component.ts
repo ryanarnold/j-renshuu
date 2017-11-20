@@ -1,6 +1,6 @@
 
 // Angular modules
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'category-button',
@@ -11,6 +11,7 @@ export class CategoryButtonComponent implements OnInit {
   @Input() private text: string;
   @Input() private title: string;
   private toggled: boolean;
+  @Output() onToggled = new EventEmitter<boolean>();
 
   toggleState() {
     if (this.toggled) {
@@ -18,6 +19,7 @@ export class CategoryButtonComponent implements OnInit {
     } else {
       this.toggled = true;
     }
+    this.onToggled.emit(this.toggled);
   }
 
   ngOnInit() {

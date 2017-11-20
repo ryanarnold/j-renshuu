@@ -12,7 +12,7 @@
 
       <div class="categories">      
         <button type="button" class="btn btn-primary all">みんな</button>
-        <category-button [text]="c.descJapanese" [title]="c.descEnglish" *ngFor="let c of categories"></category-button>
+        <category-button [text]="c.descJapanese" [title]="c.descEnglish" *ngFor="let c of categories" (onToggled)="addCategory($event, c)"></category-button>
       </div>
 
       <br>

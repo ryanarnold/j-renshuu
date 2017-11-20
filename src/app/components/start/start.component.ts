@@ -23,6 +23,11 @@ export class StartComponent implements OnInit {
   {
   }
 
+  addCategory(toggled: boolean, category: Category)
+  {
+    this.quizService.addCategory(category);
+  }
+
   ngOnInit()
   {
     this.categories = this.categoriesService.getAllCategories();
