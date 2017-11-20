@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 // Services
 import { CategoriesService } from '../../services/categories.service'
 import { Category } from '../../models/category.model';
+import { QuizService } from '../../services/quiz.service';
 
 @Component({
   selector: 'start',
@@ -16,7 +17,8 @@ export class StartComponent implements OnInit {
   
   constructor
   (
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private quizService: QuizService
   )
   {
   }
@@ -25,5 +27,4 @@ export class StartComponent implements OnInit {
   {
     this.categories = this.categoriesService.getAllCategories();
   }
-
 }
