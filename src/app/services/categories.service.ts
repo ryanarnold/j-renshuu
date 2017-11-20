@@ -4,25 +4,95 @@ import { Injectable } from '@angular/core';
 
 // Models
 import { Category } from '../models/category.model';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class CategoriesService
 {
-  public getAllCategories()
+  private _categories = 
+  [
+    {
+      'id': 101,
+      'descEnglish': 'countries',
+      'descJapanese': '国'
+    },
+    {
+      'id': 102,
+      'descEnglish': 'expressions',
+      'descJapanese': '感情表現'
+    },
+    {
+      'id': 103,
+      'descEnglish': 'family',
+      'descJapanese': '家族'
+    },
+    {
+      'id': 104,
+      'descEnglish': 'food',
+      'descJapanese': '食品'
+    },
+    {
+      'id': 105,
+      'descEnglish': 'greetings',
+      'descJapanese': '挨拶'
+    },
+    {
+      'id': 106,
+      'descEnglish': 'majors',
+      'descJapanese': '専攻'
+    },
+    {
+      'id': 107,
+      'descEnglish': 'money',
+      'descJapanese': 'お金'
+    },
+    {
+      'id': 108,
+      'descEnglish': 'numbers',
+      'descJapanese': '番号'
+    },
+    {
+      'id': 109,
+      'descEnglish': 'occupations',
+      'descJapanese': '仕事'
+    },
+    {
+      'id': 110,
+      'descEnglish': 'places',
+      'descJapanese': '位置'
+    },
+    {
+      'id': 111,
+      'descEnglish': 'things',
+      'descJapanese': '物'
+    },
+    {
+      'id': 112,
+      'descEnglish': 'words that point',
+      'descJapanese': '単語の趣旨'
+    }
+  ]
+
+  public getAllCategories(): Array<Category>
   {
     let categories = new Array<Category>();
-    categories.push(new Category(1, 'countries', '国'));
-    categories.push(new Category(1, 'expressions', '感情表現'));
-    categories.push(new Category(1, 'family', '家族'));
-    categories.push(new Category(1, 'food', '食品'));
-    categories.push(new Category(1, 'greetings', '挨拶'));
-    categories.push(new Category(1, 'majors', '専攻'));
-    categories.push(new Category(1, 'money', 'お金'));
-    categories.push(new Category(1, 'numbers', '番号'));
-    categories.push(new Category(1, 'occupations', '仕事'));
-    categories.push(new Category(1, 'places', '位置'));
-    categories.push(new Category(1, 'things', '物'));
-    categories.push(new Category(1, 'words that point', '単語の趣旨'));
+
+    for (let c of this._categories)
+    {
+      categories.push(new Category(c['id'], c['descEnglish'], c['descJapanese']));
+    }
+
     return categories;
+  }
+
+  public getById(id: number): Category
+  {
+    for (let c of this._categories)
+    {
+      if (c['id'] == id)
+      {
+        return new Category(c['id'], c['descEnglish'], c['descJapanese']);
+      }
+    }
   }
 }
