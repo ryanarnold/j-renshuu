@@ -8,7 +8,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { StartComponent } from './components/start/start.component';
 import { CategoryButtonComponent } from './components/start/category-button/category-button.component';
+import { QuizComponent } from './components/quiz/quiz.component';
 import { CategoriesService } from './services/categories.service';
+import { WordsService } from './services/words.service';
+import { PartOfSpeechService } from './services/part-of-speech.service';
 
 const appRoutes: Routes = [
   {
@@ -18,6 +21,10 @@ const appRoutes: Routes = [
   {
     path: 'start',
     component: StartComponent
+  },
+  {
+    path: 'quiz',
+    component: QuizComponent
   }
 ]
 
@@ -26,7 +33,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     StartComponent,
-    CategoryButtonComponent
+    CategoryButtonComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,9 @@ const appRoutes: Routes = [
     ),
   ],
   providers: [
-    CategoriesService
+    CategoriesService,
+    WordsService,
+    PartOfSpeechService
   ],
   bootstrap: [AppComponent]
 })
