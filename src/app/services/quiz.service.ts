@@ -10,6 +10,7 @@ export class QuizService
 {
   private format: string;
   private categories: Array<Category>;
+  private direction: string;
 
   constructor()
   {
@@ -35,5 +36,15 @@ export class QuizService
   public addCategory(category: Category)
   {
     this.categories.push(category);
+  }
+
+  public getDirection(): string
+  {
+    return this.direction;
+  }
+
+  public setDirection(direction: string)
+  {
+    this.direction = direction;
   }
 }

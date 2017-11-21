@@ -24,6 +24,15 @@
         <option>Manual Input　タイプ</option>
       </select>
 
+      <br>
+      <h4>J-E or E-J</h4>
+      <br>
+
+      <select class="form-control" (change)="changeDirection($event.target.value)">
+        <option value="JE">Japanese to English</option>
+        <option value="EJ">English to Japanese</option>
+      </select>
+
       <button class="btn btn-success start" routerLink="/quiz" routerLinkActive="active">スタート</button>
 
     </div>

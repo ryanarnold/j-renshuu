@@ -28,6 +28,11 @@ export class StartComponent implements OnInit {
     this.quizService.addCategory(category);
   }
 
+  changeDirection(newDirection: string)
+  {
+    this.quizService.setDirection(newDirection);
+  }
+
   ngOnInit()
   {
     this.categories = this.categoriesService.getAllCategories();
