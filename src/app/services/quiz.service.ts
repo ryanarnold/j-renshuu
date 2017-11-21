@@ -16,6 +16,7 @@ export class QuizService
   {
     this.format = 'choice';
     this.categories = new Array<Category>();
+    this.direction = 'JE';
   }
 
   public getFormat(): String
