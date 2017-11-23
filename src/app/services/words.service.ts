@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 import { Word } from '../models/word.model';
 
 // Services
-import { PartOfSpeechService } from './part-of-speech.service';
 import { CategoriesService } from './categories.service';
 import { Category } from '../models/category.model';
 
@@ -20,14 +19,26 @@ export class WordsService
       'definition': 'good morning',
       'kana': 'おはよう',
       'kanji': '',
-      'pos': this.posService.getById('NOUN'),
+      'category': this.categoriesService.getById(105) 
+    },
+    {
+      'id': 1002,
+      'definition': 'good morning (polite)',
+      'kana': 'おはようございます',
+      'kanji': 'お早う',
+      'category': this.categoriesService.getById(105) 
+    },
+    {
+      'id': 1003,
+      'definition': 'good afternoon',
+      'kana': 'こんにちは',
+      'kanji': '',
       'category': this.categoriesService.getById(105) 
     }
   ]
 
   constructor
   (
-    private posService: PartOfSpeechService,
     private categoriesService: CategoriesService
   )
   { }
@@ -38,7 +49,7 @@ export class WordsService
     
     for (let w of this._words)
     {
-      words.push(new Word(w['id'], w['definition'], w['kana'], w['kanji'], w['pos'], w['category']));
+      words.push(new Word(w['id'], w['definition'], w['kana'], w['kanji'], w['category']));
     }
 
     return words;
@@ -54,7 +65,7 @@ export class WordsService
       {
         if (c['descEnglish'] == w['category']['descEnglish'])
         {
-          words.push(new Word(w['id'], w['definition'], w['kana'], w['kanji'], w['pos'], w['category']));
+          words.push(new Word(w['id'], w['definition'], w['kana'], w['kanji'], w['category']));
         }
       }
     }

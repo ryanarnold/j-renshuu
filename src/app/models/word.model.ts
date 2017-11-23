@@ -1,5 +1,4 @@
 
-import { PartOfSpeech } from './part-of-speech.model';
 import { Category } from './category.model';
 
 export class Word
@@ -8,7 +7,6 @@ export class Word
   public definition: string;
   public kana: string;
   public kanji: string;
-  public pos: PartOfSpeech;
   public category: Category;
 
   constructor
@@ -17,7 +15,6 @@ export class Word
     definition: string,
     kana: string,
     kanji: string,
-    pos: PartOfSpeech,
     category: Category
   )
   {
@@ -25,7 +22,6 @@ export class Word
     this.definition = definition;
     this.kana = kana;
     this.kanji = kanji;
-    this.pos = pos;
     this.category = category;
   }
 }

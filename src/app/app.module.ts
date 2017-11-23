@@ -11,7 +11,6 @@ import { CategoryButtonComponent } from './components/start/category-button/cate
 import { QuizComponent } from './components/quiz/quiz.component';
 import { CategoriesService } from './services/categories.service';
 import { WordsService } from './services/words.service';
-import { PartOfSpeechService } from './services/part-of-speech.service';
 import { QuizService } from './services/quiz.service';
 
 const appRoutes: Routes = [
@@ -47,7 +46,6 @@ const appRoutes: Routes = [
   providers: [
     CategoriesService,
     WordsService,
-    PartOfSpeechService,
     QuizService
   ],
   bootstrap: [AppComponent]
