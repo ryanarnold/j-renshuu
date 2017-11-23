@@ -6,9 +6,9 @@
     <h3 class="question text-center" *ngIf="quizService.getDirection() == 'EJ'">{{ currentWord['definition'] }}</h3>
 
     <br>
-    <input type="text" class="form-control answer" autofocus>
+    <input type="text" class="form-control answer" (keyup.enter)="nextWord()" autofocus>
 
-    <button class="btn btn-success next">次</button>
+    <button class="btn btn-success next" (click)="nextWord()">次</button>
 
   </div>
   <div class="col"></div>
