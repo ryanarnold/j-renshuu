@@ -28,18 +28,40 @@ export class QuizComponent implements OnInit
 
   nextWord()
   {
+    if (this.quizService.getDirection() == 'JE')
+    {
+      this.checkAnswerJE();
+    }
+    else
+    {
+      this.checkAnswerEJ();
+    }
+    
+    this.currentWordIndex += 1;
+    this.currentWord = this.words[this.currentWordIndex];
+    this.userAnswer = '';
+  }
+
+  checkAnswerJE()
+  {
     if (this.userAnswer == this.currentWord.definition)
     {
       this.quizService.incrementCorrect();
     }
-    else
-    {
+    else {
       this.quizService.incrementWrong();
     }
+  }
 
-    this.currentWordIndex += 1;
-    this.currentWord = this.words[this.currentWordIndex];
-    this.userAnswer = '';
+  checkAnswerEJ()
+  {
+    if (this.userAnswer == this.currentWord.kana || this.userAnswer == this.currentWord.kanji)
+    {
+      this.quizService.incrementCorrect();
+    }
+    else {
+      this.quizService.incrementWrong();
+    }
   }
 
   ngOnInit()
