@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 // Components
 
@@ -14,6 +15,7 @@ import { CategoriesService } from './services/categories.service';
 import { WordsService } from './services/words.service';
 import { QuizService } from './services/quiz.service';
 import { EndComponent } from './components/end/end.component';
+import { APIService } from './services/api.service';
 
 const appRoutes: Routes = [
   {
@@ -49,12 +51,14 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: false }
     ),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     CategoriesService,
     WordsService,
-    QuizService
+    QuizService,
+    APIService,
   ],
   bootstrap: [AppComponent]
 })
