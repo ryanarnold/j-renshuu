@@ -36,6 +36,9 @@ export class StartComponent implements OnInit {
 
   ngOnInit()
   {
-    this.categories = this.categoriesService.getAllCategories();
+    this.categoriesService.getAllCategories().subscribe(categories =>
+    {
+      this.categories = categories;
+    });
   }
 }
