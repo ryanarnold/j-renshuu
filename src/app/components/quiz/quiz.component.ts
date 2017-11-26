@@ -73,10 +73,12 @@ export class QuizComponent implements OnInit
 
   ngOnInit()
   {
-    this.words = this.wordsService.getByCategory(this.quizService.getCategories());
-    this.currentWordIndex = 0;
-    this.currentWord = this.words[this.currentWordIndex];
-    this.userAnswer = '';
+    this.wordsService.getByCategory(this.quizService.getCategories()).subscribe(words =>
+    {
+      this.words = words;
+      this.currentWordIndex = 0;
+      this.currentWord = this.words[this.currentWordIndex];
+      this.userAnswer = '';
+    });
   }
-
 }
