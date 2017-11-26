@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 // Components
 
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true }
     ),
+    FormsModule
   ],
   providers: [
     CategoriesService,
