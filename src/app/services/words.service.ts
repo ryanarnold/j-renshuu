@@ -15,45 +15,6 @@ import { APIService } from './api.service';
 @Injectable()
 export class WordsService
 {
-  // private _words =
-  // [
-  //   {
-  //     'id': 1001,
-  //     'definition': 'good morning',
-  //     'kana': 'おはよう',
-  //     'kanji': '',
-  //     'category': this.categoriesService.getById(105) 
-  //   },
-  //   {
-  //     'id': 1002,
-  //     'definition': 'good morning (polite)',
-  //     'kana': 'おはようございます',
-  //     'kanji': '',
-  //     'category': this.categoriesService.getById(105) 
-  //   },
-  //   {
-  //     'id': 1003,
-  //     'definition': 'good afternoon',
-  //     'kana': 'こんにちは',
-  //     'kanji': '',
-  //     'category': this.categoriesService.getById(105) 
-  //   },
-  //   {
-  //     'id': 1004,
-  //     'definition': 'good evening',
-  //     'kana': 'こんばんは',
-  //     'kanji': '',
-  //     'category': this.categoriesService.getById(105) 
-  //   },
-  //   {
-  //     'id': 1005,
-  //     'definition': 'goodbye',
-  //     'kana': 'さようなら',
-  //     'kanji': '',
-  //     'category': this.categoriesService.getById(105) 
-  //   }
-  // ]
-
   private categories: Array<Category>;
 
   constructor
