@@ -1,6 +1,7 @@
 
 // Angular modules
 import { Component, OnInit } from '@angular/core';
+import { QuizService } from '../../services/quiz.service';
 
 
 @Component({
@@ -10,5 +11,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EndComponent
 {
-
+  constructor
+  (
+    private quizService: QuizService
+  )
+  { }
 }

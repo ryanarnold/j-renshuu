@@ -9,15 +9,15 @@
     <table class="table">
       <tr class="correct">
         <td>Correct</td>
-        <td class="text-right">14</td>
+        <td class="text-right">{{ quizService.getCorrect() }}</td>
       </tr>
       <tr class="wrong">
         <td>Wrong</td>
-        <td class="text-right">4</td>
+        <td class="text-right">{{ quizService.getWrong() }}</td>
       </tr>
       <tr class="score">
         <td>Score</td>
-        <td class="text-right">89%</td>
+        <td class="text-right">{{ (quizService.getCorrect() / (quizService.getCorrect() + quizService.getWrong())) * 100 }}%</td>
       </tr>
     </table>
 
