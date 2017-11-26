@@ -21,6 +21,7 @@ export class StartComponent implements OnInit {
     private quizService: QuizService
   )
   {
+    this.quizService.initializeValues();
   }
 
   addCategory(toggled: boolean, category: Category)

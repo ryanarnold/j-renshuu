@@ -11,12 +11,21 @@ export class QuizService
   private format: string;
   private categories: Array<Category>;
   private direction: string;
+  private correct: number;
+  private wrong: number;
 
   constructor()
+  {
+    this.initializeValues();
+  }
+
+  public initializeValues()
   {
     this.format = 'choice';
     this.categories = new Array<Category>();
     this.direction = 'JE';
+    this.correct = 0;
+    this.wrong = 0;
   }
 
   public getFormat(): String
@@ -47,5 +56,25 @@ export class QuizService
   public setDirection(direction: string)
   {
     this.direction = direction;
+  }
+
+  public getCorrect()
+  {
+    return this.correct;
+  }
+
+  public incrementCorrect()
+  {
+    this.correct += 1;
+  }
+
+  public getWrong()
+  {
+    return this.wrong;
+  }
+
+  public incrementWrong()
+  {
+    this.wrong += 1;
   }
 }
