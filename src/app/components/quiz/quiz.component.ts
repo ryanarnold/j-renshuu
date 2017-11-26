@@ -1,6 +1,7 @@
 
 // Angular modules
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // Services
 import { QuizService } from '../../services/quiz.service';
@@ -22,7 +23,8 @@ export class QuizComponent implements OnInit
   constructor
   (
     private quizService: QuizService,
-    private wordsService: WordsService
+    private wordsService: WordsService,
+    private router: Router
   )
   { }
 
@@ -40,6 +42,11 @@ export class QuizComponent implements OnInit
     this.currentWordIndex += 1;
     this.currentWord = this.words[this.currentWordIndex];
     this.userAnswer = '';
+
+    if (this.currentWordIndex == this.words.length)
+    {
+      this.router.navigate(['/end']);
+    }
   }
 
   checkAnswerJE()
