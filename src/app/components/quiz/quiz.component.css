@@ -1,8 +1,7 @@
 
 .next {
     width: 100%;
-    margin-top: 60px;
-    margin-bottom:60px;
+    margin-bottom: 30px;
 }
 
 .question {
@@ -15,4 +14,12 @@
     border-left: 0;
     border-right: 0;
     border-radius: 0px;
+}
+
+.exit {
+    color: red;
+}
+
+.exit:hover {
+    color: red;
 }
