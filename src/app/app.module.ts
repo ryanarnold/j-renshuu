@@ -13,6 +13,7 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { CategoriesService } from './services/categories.service';
 import { WordsService } from './services/words.service';
 import { QuizService } from './services/quiz.service';
+import { EndComponent } from './components/end/end.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'quiz',
     component: QuizComponent
+  },
+  {
+    path: 'end',
+    component: EndComponent
   }
 ]
 
@@ -35,7 +40,8 @@ const appRoutes: Routes = [
     HomeComponent,
     StartComponent,
     CategoryButtonComponent,
-    QuizComponent
+    QuizComponent,
+    EndComponent
   ],
   imports: [
     BrowserModule,
