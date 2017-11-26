@@ -25,13 +25,27 @@ export class WordsService
       'id': 1002,
       'definition': 'good morning (polite)',
       'kana': 'おはようございます',
-      'kanji': 'お早う',
+      'kanji': '',
       'category': this.categoriesService.getById(105) 
     },
     {
       'id': 1003,
       'definition': 'good afternoon',
       'kana': 'こんにちは',
+      'kanji': '',
+      'category': this.categoriesService.getById(105) 
+    },
+    {
+      'id': 1004,
+      'definition': 'good evening',
+      'kana': 'こんばんは',
+      'kanji': '',
+      'category': this.categoriesService.getById(105) 
+    },
+    {
+      'id': 1005,
+      'definition': 'goodbye',
+      'kana': 'さようなら',
       'kanji': '',
       'category': this.categoriesService.getById(105) 
     }
