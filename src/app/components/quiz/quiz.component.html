@@ -2,8 +2,9 @@
   <div class="col"></div>
   <div class="col">
 
-    <h3 class="question text-center" *ngIf="quizService.getDirection() == 'JE'">{{ currentWord['kana'] }}</h3>
-    <h3 class="question text-center" *ngIf="quizService.getDirection() == 'EJ'">{{ currentWord['definition'] }}</h3>
+    <!-- <h3 class="question text-center" *ngIf="quizService.getDirection() == 'JE'">{{ currentWord['kana'] }}</h3>
+    <h3 class="question text-center" *ngIf="quizService.getDirection() == 'EJ'">{{ currentWord['definition'] }}</h3> -->
+    <h3 class="question text-center">{{ question }}</h3>
 
     <br>
     <input type="text" class="form-control answer text-center" (keyup.enter)="nextWord()" [(ngModel)]="userAnswer" autofocus>

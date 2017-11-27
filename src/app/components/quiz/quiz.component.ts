@@ -19,6 +19,7 @@ export class QuizComponent implements OnInit
   private currentWord: Word;
   private currentWordIndex: number;
   private userAnswer: string;
+  private question: string;
   
   constructor
   (
@@ -47,6 +48,8 @@ export class QuizComponent implements OnInit
     {
       this.router.navigate(['/end']);
     }
+
+    this.setQuestion();
   }
 
   checkAnswerJE()
@@ -79,6 +82,27 @@ export class QuizComponent implements OnInit
       this.currentWordIndex = 0;
       this.currentWord = this.words[this.currentWordIndex];
       this.userAnswer = '';
+
+      this.setQuestion();
     });
+  }
+
+  setQuestion()
+  {
+    if (this.quizService.getDirection() == 'JE')
+    {
+      if (this.currentWord.kanji)
+      {
+        this.question = this.currentWord.kanji;
+      }
+      else
+      {
+        this.question = this.currentWord.kana;
+      }
+    }
+    else
+    {
+      this.question = this.currentWord.definition;
+    }
   }
 }
