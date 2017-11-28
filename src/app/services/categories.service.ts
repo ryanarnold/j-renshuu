@@ -23,17 +23,6 @@ export class CategoriesService
     return this.api.httpGetMany('categories').map(this.createCategoriesFromJSONList, this);
   }
 
-  // public getById(id: number): Category
-  // {
-  //   for (let c of this._categories)
-  //   {
-  //     if (c['id'] == id)
-  //     {
-  //       return new Category(c['id'], c['descEnglish'], c['descJapanese']);
-  //     }
-  //   }
-  // }
-
   private createCategoriesFromJSONList(jsonList: object[]): Array<Category>
   {
     let categories = new Array<Category>();

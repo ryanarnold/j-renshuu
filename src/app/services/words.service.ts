@@ -24,18 +24,30 @@ export class WordsService
   )
   { }
 
+  /**
+   * Returns an Observable of all the words available.
+   * @returns Observable
+   */
   public getAllWords(): Observable<Array<Word>>
   {
     return this.api.httpGetMany('words').map(this.createWordsFromJSONList, this);
   }
 
+  /**
+   * Returns an Observable of all words with the given categories.
+   * @param categories - an Array of categories
+   */
   public getByCategory(categories: Array<Category>): Observable<Array<Word>>
   {
     this.categories = categories;
     return this.api.httpGetMany('words').map(this.filterByCategory, this);
   }
 
-  public filterByCategory(jsonList: object[]): Array<Word>
+  /**
+   * Filters the generic jsonList object array and returns an Array of words with a given category.
+   * @param jsonList - generic object array
+   */
+  private filterByCategory(jsonList: object[]): Array<Word>
   {
     let words = new Array<Word>();
 
