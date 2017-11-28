@@ -8,6 +8,7 @@ export class Word
   public kana: string;
   public kanji: string;
   public category: Category;
+  public furigana: string;
 
   constructor
   (
@@ -15,7 +16,8 @@ export class Word
     definition: string,
     kana: string,
     kanji: string,
-    category: Category
+    category: Category,
+    furigana: string
   )
   {
     this.id = id;
@@ -23,5 +25,6 @@ export class Word
     this.kana = kana;
     this.kanji = kanji;
     this.category = category;
+    this.furigana = furigana;
   }
 }

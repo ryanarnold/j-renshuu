@@ -57,7 +57,7 @@ export class WordsService
       {
         if (c.descEnglish == w['category']['desc_english'])
         {
-          words.push(new Word(w['id'], w['definition'], w['kana'], w['kanji'], w['category']));
+          words.push(new Word(w['id'], w['definition'], w['kana'], w['kanji'], w['category'], w['furigana']));
         }
       }
     }
@@ -73,7 +73,7 @@ export class WordsService
     
     for (let w of jsonList)
     {
-      words.push(new Word(w['id'], w['definition'], w['kana'], w['kanji'], w['category']));
+      words.push(new Word(w['id'], w['definition'], w['kana'], w['kanji'], w['category'], w['furigana']));
     }
 
     return words;
