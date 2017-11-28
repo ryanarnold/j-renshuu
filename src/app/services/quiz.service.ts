@@ -13,6 +13,7 @@ export class QuizService
   private direction: string;
   private correct: number;
   private wrong: number;
+  private showFurigana: boolean;
 
   constructor()
   {
@@ -26,6 +27,7 @@ export class QuizService
     this.direction = 'JE';
     this.correct = 0;
     this.wrong = 0;
+    this.showFurigana = true;
   }
 
   public getFormat(): String
@@ -76,5 +78,15 @@ export class QuizService
   public incrementWrong()
   {
     this.wrong += 1;
+  }
+
+  public setShowFurigana(show: boolean)
+  {
+    this.showFurigana = show;
+  }
+
+  public getShowFurigana(): boolean
+  {
+    return this.showFurigana;
   }
 }

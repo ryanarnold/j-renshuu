@@ -33,6 +33,17 @@
         <option value="EJ">English to Japanese</option>
       </select>
 
+      <div *ngIf="quizService.getDirection() == 'JE'">
+        <br>
+        <h4>Show Furigana?</h4>
+        <br>
+
+        <select class="form-control" (change)="changeShowFurigana($event.target.value)">
+          <option value="Y">Yes</option>
+          <option value="N">No</option>
+        </select>
+      </div>
+
       <button class="btn btn-success start" routerLink="/quiz" routerLinkActive="active">スタート</button>
 
     </div>

@@ -34,6 +34,18 @@ export class StartComponent implements OnInit {
     this.quizService.setDirection(newDirection);
   }
 
+  changeShowFurigana(show: string)
+  {
+    if (show == 'Y')
+    {
+      this.quizService.setShowFurigana(true);
+    }
+    else
+    {
+      this.quizService.setShowFurigana(false);
+    }
+  }
+
   ngOnInit()
   {
     this.categoriesService.getAllCategories().subscribe(categories =>
