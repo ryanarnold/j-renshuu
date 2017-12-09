@@ -9,7 +9,7 @@ import 'rxjs/Rx';
 export class APIService
 {
   private protocol = 'https://';
-  private domain = 'j-renshuu.appspot.com';
+  private domain = 'j-renshuu-api.appspot.com';
 
   constructor
   (
