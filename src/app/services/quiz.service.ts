@@ -22,7 +22,7 @@ export class QuizService
 
   public initializeValues()
   {
-    this.format = 'choice';
+    this.format = 'input';
     this.categories = new Array<Category>();
     this.direction = 'JE';
     this.correct = 0;
