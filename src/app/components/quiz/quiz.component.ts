@@ -20,7 +20,7 @@ export class QuizComponent implements OnInit
   private currentWordIndex: number;
   private userAnswer: string;
   private question: string;
-  private currentChoices: Array<Word>;
+  private currentChoices: Array<string>;
   
   constructor
   (
@@ -30,8 +30,13 @@ export class QuizComponent implements OnInit
   )
   { }
 
-  nextWord()
+  nextWord(answer?: string)
   {
+    if (this.quizService.getFormat() == 'choice')
+    {
+      this.userAnswer = answer;
+    }
+
     if (this.quizService.getDirection() == 'JE')
     {
       this.checkAnswerJE();
@@ -119,7 +124,7 @@ export class QuizComponent implements OnInit
   setChoices()
   {
     let chosenWord: Word;
-    this.currentChoices = new Array<Word>();
+    this.currentChoices = new Array<string>();
     let forbiddenWordIds = new Array<number>();
     forbiddenWordIds.push(this.currentWord.id);
 
@@ -136,10 +141,52 @@ export class QuizComponent implements OnInit
           break;
         }
       }
-      this.currentChoices.push(chosenWord);
+      if (this.quizService.getDirection() == 'JE')
+      {
+        this.currentChoices.push(chosenWord.definition);
+      }
+      else {
+        if (chosenWord.kanji)
+        {
+          this.currentChoices.push(chosenWord.kanji);
+        }
+        else
+        {
+          this.currentChoices.push(chosenWord.kana);
+        }
+      }
+      
     }
 
-    this.currentChoices.push(this.currentWord);
-    this.currentChoices = this.wordsService.shuffleWordsArray(this.currentChoices);
+    if (this.quizService.getDirection() == 'JE')
+    {
+      this.currentChoices.push(this.currentWord.definition);
+    }
+    else {
+      if (this.currentWord.kanji)
+      {
+        this.currentChoices.push(this.currentWord.kanji);
+      }
+      else
+      {
+        this.currentChoices.push(this.currentWord.kana);
+      }
+    }
+    this.currentChoices = this.shuffleStringArray(this.currentChoices);
+  }
+
+  public shuffleStringArray(array: Array<string>)
+  {
+    let j, x, i;
+
+    for (i = array.length - 1; i > 0; i--)
+    {
+      j = Math.floor(Math.random() * (i + 1));
+      x = array[i];
+      array[i] = array[j];
+      array[j] = x;
+    }
+
+    return array;
   }
 }
