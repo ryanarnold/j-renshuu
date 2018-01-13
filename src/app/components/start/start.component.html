@@ -19,9 +19,9 @@
       <h4>Format「進め方」</h4>
       <br>
 
-      <select class="form-control">
-        <option>Manual Input</option>
-        <option>Multiple Choice</option>
+      <select class="form-control" (change)="changeFormat($event.target.value)">
+        <option value="input">Manual Input</option>
+        <option value="choice">Multiple Choice</option>
       </select>
 
       <br>

@@ -46,6 +46,11 @@ export class StartComponent implements OnInit {
     }
   }
 
+  changeFormat(format: string)
+  {
+    this.quizService.setFormat(format);
+  }
+
   ngOnInit()
   {
     this.categoriesService.getAllCategories().subscribe(categories =>
