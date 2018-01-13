@@ -79,7 +79,7 @@ export class WordsService
     return words;
   }
 
-  private shuffleWordsArray(array: Array<Word>)
+  public shuffleWordsArray(array: Array<Word>)
   {
     let j, x, i;
 
