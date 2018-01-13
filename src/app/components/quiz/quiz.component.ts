@@ -20,6 +20,7 @@ export class QuizComponent implements OnInit
   private currentWordIndex: number;
   private userAnswer: string;
   private question: string;
+  private currentChoices: Array<Word>;
   
   constructor
   (
@@ -99,10 +100,46 @@ export class QuizComponent implements OnInit
       {
         this.question = this.currentWord.kana;
       }
+      if (this.quizService.getFormat() == 'choice')
+      {
+        this.setChoices();
+      }
     }
     else
     {
       this.question = this.currentWord.definition;
+      
+      if (this.quizService.getFormat() == 'choice')
+      {
+        this.setChoices();
+      }
     }
+  }
+
+  setChoices()
+  {
+    let chosenWord: Word;
+    this.currentChoices = new Array<Word>();
+    let forbiddenWordIds = new Array<number>();
+    forbiddenWordIds.push(this.currentWord.id);
+
+    for (let i = 0; i < 3; i++)
+    {
+      while (true)
+      {
+        let wordIndex = Math.floor(Math.random() * this.words.length);
+        chosenWord = this.words[wordIndex];
+
+        if (!forbiddenWordIds.includes(chosenWord.id))
+        {
+          forbiddenWordIds.push(chosenWord.id);
+          break;
+        }
+      }
+      this.currentChoices.push(chosenWord);
+    }
+
+    this.currentChoices.push(this.currentWord);
+    this.currentChoices = this.wordsService.shuffleWordsArray(this.currentChoices);
   }
 }
