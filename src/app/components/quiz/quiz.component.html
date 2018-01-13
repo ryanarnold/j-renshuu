@@ -8,8 +8,15 @@
     <p class="text-center" *ngIf="quizService.getDirection() == 'JE' && quizService.getShowFurigana()">{{ currentWord['furigana'] }}</p>
 
     <br>
-    <input type="text" class="form-control answer text-center" (keyup.enter)="nextWord()" [(ngModel)]="userAnswer" autofocus>
-    
+
+    <div *ngIf="quizService.getFormat() == 'input'">
+      <input type="text" class="form-control answer text-center" (keyup.enter)="nextWord()" [(ngModel)]="userAnswer" autofocus>
+    </div>
+
+    <div *ngIf="quizService.getFormat() == 'choice'">
+      <button *ngFor="let choice of currentChoices" (click)="nextWord(choice)" class="btn choice">{{ choice }}</button>
+    </div>
+
     <table class="table">
       <tr>
         <td class="text-left">
@@ -21,7 +28,7 @@
       </tr>
     </table>
 
-    <button class="btn btn-success next" (click)="nextWord()">次</button>
+    <button class="btn btn-success next" (click)="nextWord()" *ngIf="quizService.getFormat() == 'input'">隣</button>
 
     <p class="text-center">
       <a class="exit" routerLink="/start" routerLinkActive="active">出口</a>
