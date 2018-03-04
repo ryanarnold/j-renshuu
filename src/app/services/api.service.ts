@@ -8,8 +8,8 @@ import 'rxjs/Rx';
 @Injectable()
 export class APIService
 {
-  private protocol = 'https://';
-  private domain = 'j-renshuu-api.appspot.com';
+  private protocol = 'http://';
+  private domain = 'localhost:8000';
 
   constructor
   (
