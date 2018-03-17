@@ -89,4 +89,9 @@ export class QuizService
   {
     return this.showFurigana;
   }
+
+  public getScore(): number
+  {
+    return Math.floor((this.getCorrect() / (this.getCorrect() + this.getWrong())) * 100)
+  }
 }
