@@ -5,7 +5,7 @@
     <!-- <h3 class="question text-center" *ngIf="quizService.getDirection() == 'JE'">{{ currentWord['kana'] }}</h3>
     <h3 class="question text-center" *ngIf="quizService.getDirection() == 'EJ'">{{ currentWord['definition'] }}</h3> -->
     <h3 class="question text-center">{{ question }}</h3>
-    <p class="text-center" *ngIf="quizService.getDirection() == 'JE' && quizService.getShowFurigana()">{{ currentWord['furigana'] }}</p>
+    <p class="text-center" *ngIf="quizService.getDirection() == 'JE' && quizService.getShowFurigana()">{{ currentWord['kana'] }}</p>
 
     <br>
 
