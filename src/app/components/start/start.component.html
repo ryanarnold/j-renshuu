@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col"></div>
-    <div class="col">
+    <div class="col-8">
 
       <h1 class="text-center title">J-Renshuu</h1>
       <p class="text-center">Ｊ－練習</p>
@@ -11,7 +11,6 @@
       <br>
 
       <div class="categories">      
-        <button type="button" class="btn btn-primary all">みんな</button>
         <category-button [text]="c.descJapanese" [title]="c.descEnglish" *ngFor="let c of categories" (onToggled)="addCategory($event, c)"></category-button>
       </div>
 
