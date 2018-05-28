@@ -27,7 +27,7 @@ export class QuizService
     this.direction = 'JE';
     this.correct = 0;
     this.wrong = 0;
-    this.showFurigana = true;
+    this.showFurigana = false;
   }
 
   public getFormat(): String
